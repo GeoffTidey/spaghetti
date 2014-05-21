@@ -1,15 +1,15 @@
 $(function() {
   function nearBottomOfPage() {
-    return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
+    return $(window).scrollTop() > $(document).height() - $(window).height() - 500;
   }
-  
+
   function triggerHooks(hook) {
     fn = hook + '_spaghetti';
     if (typeof window[fn] != 'undefined') {
       fireHook(fn);
     }
   }
-  
+
   function fireHook(func){
     this[func].apply(this, Array.prototype.slice.call(arguments, 1));
   }
@@ -32,7 +32,7 @@ $(function() {
       }
     });
   });
-  
+
   $(window).scroll(function(){
     if ($('.spaghetti').data('spaghetti-enabled') == 1) {
       if(nearBottomOfPage()) {
