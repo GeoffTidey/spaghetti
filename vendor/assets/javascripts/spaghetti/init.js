@@ -1,6 +1,7 @@
 $(function() {
   function nearBottomOfPage() {
-    return $(window).scrollTop() > $(document).height() - $(window).height() - 500;
+    var nearBottom = $(window).scrollTop() > $('#spaghetti-bottom-anchor').offset().top - $(window).height();
+    return nearBottom;
   }
 
   function triggerHooks(hook) {
